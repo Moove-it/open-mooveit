@@ -3,6 +3,7 @@ GEM
   specs:
     chunky_png (1.3.4)
     daemons (1.2.3)
+    dotenv (2.0.2)
     eventmachine (1.0.7)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
@@ -33,8 +34,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   mail
   rqrcode_png
   sinatra
   slim
   thin
+
+BUNDLED WITH
+   1.10.6

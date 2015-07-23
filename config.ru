@@ -2,10 +2,13 @@ $LOAD_PATH << File.dirname(__FILE__)
 
 require 'base64'
 
+require 'dotenv'
+require 'mail'
+require 'rqrcode_png'
 require 'sinatra/base'
 require 'slim'
-require 'rqrcode_png'
-require 'mail'
+
+Dotenv.load
 
 class OpenMooveIt < Sinatra::Base
 
@@ -14,8 +17,8 @@ class OpenMooveIt < Sinatra::Base
                     address:              'smtp.gmail.com',
                     port:                 '587',
                     authentication:       :plain,
-                    user_name:            'admin@moove-it.com',
-                    password:             'Moo1729IT',
+                    user_name:            ENV['SMTP_USER'],
+                    password:             ENV['SMTP_PASSWORD'],
                     enable_starttls_auto: true
   end
 
@@ -51,7 +54,8 @@ class OpenMooveIt < Sinatra::Base
   end
 
   get '/qr' do
-    @code = params[:code] || 'www.moove-it.com'
+    @code = params[:code]
+    @code = 'www.moove-it.com' if !params[:code] || params[:code].empty?
 
     slim :qr, layout: :layout
   end

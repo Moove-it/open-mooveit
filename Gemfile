@@ -9,3 +9,4 @@ gem 'rqrcode_png'
 gem 'mail'
 
 gem 'thin'
+gem 'dotenv'
