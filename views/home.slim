@@ -1,0 +1,17 @@
+.jumbotron
+  h1 Hi, UTU!
+
+  p We're from Moove-it and we would like to invite you to visit our offices and hang out
+    with us.
+
+  p If any of you are interested you just need to enter you email address bellow, we'll get
+    in touch with the ones that do it asap!
+
+  .text-center
+    form.form-inline action='/sign_up' method='post'
+      .form-group
+        .input-group
+          .input-group-addon Email
+          input.form-control type='email' name='email' placeholder='jane.doe@moove-it.com'
+
+      button.btn.btn-primary.btn-sm type='submit' Get in touch!

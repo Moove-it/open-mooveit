@@ -1,0 +1,11 @@
+.jumbotron.text-center
+  form.form-inline
+    .form-group
+      .input-group
+        .input-group-addon Code
+        input.form-control type='text' name='code' placeholder='www.moove-it.com'
+
+    button.btn.btn-success.btn-sm type='submit' Generate
+
+  img alt=@code src="data:image/png;base64,#{base64_encoded_code(@code)}"
+  .h4= @code

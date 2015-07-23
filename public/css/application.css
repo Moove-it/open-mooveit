@@ -1,0 +1,14 @@
+.navbar-brand {
+    margin-top: -20;
+}
+
+.footer-copyright {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #777;
+    line-height: 20px;
+}
+
+.form-inline .form-group {
+    margin-right: 0.5em;
+}
