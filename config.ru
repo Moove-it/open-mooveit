@@ -63,8 +63,7 @@ class OpenMooveIt < Sinatra::Base
   end
 
   get '/resume' do
-    @experiences = ['2015-Present | NASA',
-                    '2014-2015 | Google',
+    @experiences = ['2014-Present | Google',
                     '2011-2013 | Freelance Ruby developer',
                     '2010-2011 | My awesome first job']
 
