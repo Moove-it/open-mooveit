@@ -1,2 +1,11 @@
 .jumbotron
-  | RESUME
+  .h3 Hi this is my work history:
+
+  p
+    ul
+     - @experiences.each do |experience|
+       li= experience
+
+  p
+    ' I'm always looking for new challenges and opportunities, you can reach me at
+    strong= CONTACT_EMAIL

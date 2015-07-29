@@ -12,6 +12,8 @@ Dotenv.load
 
 class OpenMooveIt < Sinatra::Base
 
+  CONTACT_EMAIL = 'jane.doe@gmail.com'
+
   Mail.defaults do
     delivery_method :smtp,
                     address:              'smtp.gmail.com',
@@ -61,14 +63,16 @@ class OpenMooveIt < Sinatra::Base
   end
 
   get '/resume' do
+    @experiences = ['2014-Present | Google',
+                    '2011-2013 | Freelance Ruby developer',
+                    '2010-2011 | My awesome first job']
+
     slim :resume
   end
 
-  get '/projects' do
-    slim :projects, layout: :layout
-  end
-
   get '/hobbies' do
+    @hobbies = %w[Surfing Skating KiteSurfing Biking]
+
     slim :hobbies, layout: :layout
   end
 

@@ -1,2 +1,6 @@
 .jumbotron
-  | HOBBIES
+  .h3 These are some of the things that I like doing in my free time:
+
+  ul
+    - @hobbies.each do |hobby|
+      li= hobby
